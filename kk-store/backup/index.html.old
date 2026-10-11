@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA V - Fixed Game Canvas</title>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        overflow: hidden;
+        position: fixed;
+    }
+    .player-viewport {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+    }
+    /* Yeh iframe ko shift aur crop karega taaki sirf game player box fixed dikhe */
+    .player-viewport iframe {
+        position: absolute;
+        top: -260px;
+        left: 0;
+        width: 100%;
+        height: calc(100% + 450px);
+        border: none;
+        pointer-events: auto;
+    }
+</style>
+</head>
+<body>
+    <div class="player-viewport">
+        <iframe src="https://www.inxanitylabs.com/games/gta-v" allowfullscreen allow="autoplay; fullscreen; gamepad; pointer-lock"></iframe>
+    </div>
+</body>
+</html>

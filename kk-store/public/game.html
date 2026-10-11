@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0c12">
+<title>GTA V | KARTIK KAMBOJ</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090b11;color:#f5f6fa;font-family:Arial,sans-serif}
+header{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;border-bottom:1px solid #252a38;background:#10131d}
+.brand{font-weight:900;letter-spacing:1px}.brand span{color:#c5ff48}
+.back{color:#fff;text-decoration:none;border:1px solid #343a4c;padding:10px 14px;border-radius:9px}
+main{max-width:1100px;margin:auto;padding:24px 18px 50px}
+.hero{position:relative;overflow:hidden;border-radius:16px;background:#151824;border:1px solid #292e3e}
+.cover{width:100%;height:clamp(180px,38vw,350px);object-fit:cover;object-position:center 35%;display:block}
+.shade{position:absolute;inset:0;background:linear-gradient(0deg,#090b11 0%,transparent 80%)}
+.hero-text{position:absolute;left:24px;bottom:20px}
+.tag{color:#c5ff48;font-size:11px;font-weight:900;letter-spacing:2px}
+h1{font-size:clamp(28px,5vw,46px);margin:8px 0}
+p{color:#aeb4c5;line-height:1.6}
+h2{font-size:21px;margin:28px 0 8px}
+.sources{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:18px}
+.source{background:#141824;border:1px solid #30364a;border-radius:13px;padding:18px;text-align:left;color:#fff;cursor:pointer;min-width:0}
+.source strong{display:block;font-size:15px;margin-bottom:8px;overflow-wrap:anywhere}
+.source small{color:#aeb4c5;line-height:1.5;display:block}
+.source.active{border-color:#c5ff48;box-shadow:0 0 0 1px #c5ff48}
+.play{display:block;background:#c5ff48;color:#111509;text-align:center;font-weight:900;padding:12px;border-radius:8px;margin-top:14px}
+#status{font-size:13px;color:#c5ff48;min-height:20px}
+.player{display:none;margin-top:22px;border:1px solid #292e3e;border-radius:12px;overflow:hidden;background:#000}
+.player.ready{display:block}
+.playerbar{display:flex;align-items:center;gap:10px;padding:12px;background:#151925;flex-wrap:wrap}
+#playing{flex:1;min-width:120px;font-weight:800}
+button.action{border:1px solid #3a4053;background:#252a3a;color:white;padding:10px 13px;border-radius:8px;font-weight:700;cursor:pointer}
+button.action.green{background:#c5ff48;color:#10130a;border-color:#c5ff48}
+.framebox{width:100%;height:min(68vh,680px);min-height:280px;background:#000}
+iframe{width:100%;height:100%;display:block;border:0;margin:0;background:#000}
+.player:fullscreen,.player:-webkit-full-screen{width:100vw;height:100vh;height:100dvh;border:0;border-radius:0;background:#000}
+.player:fullscreen .playerbar,.player:-webkit-full-screen .playerbar{display:none}
+.player:fullscreen .framebox,.player:-webkit-full-screen .framebox{width:100%;height:100%;height:100dvh;min-height:0}
+.notice{font-size:12px;color:#8d95a9;margin-top:18px}
+@media(max-width:700px){.sources{grid-template-columns:1fr}.source{padding:15px}.hero-text{left:16px;bottom:12px}.cover{height:230px}header{padding:0 14px}.framebox{height:65vh;min-height:250px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">KARTIK <span>KAMBOJ</span></div>
+  <a class="back" href="/">← Home</a>
+</header>
+
+<main>
+  <section class="hero">
+    <img class="cover" src="/images/gta-v-cover.png" alt="Grand Theft Auto V artwork">
+    <div class="shade"></div>
+    <div class="hero-text">
+      <div class="tag">GAME DETAILS · PLAYER OPTIONS</div>
+      <h1>Grand Theft Auto V</h1>
+      <div style="color:#b9c0d0;font-size:13px">Choose your game source below</div>
+    </div>
+  </section>
+
+  <h2>Choose a Game Source</h2>
+  <p>Select one option. The game will load below; it will not start until you choose a source.</p>
+
+  <div class="sources">
+    <button class="source" data-name="PlayGTA5.site" data-url="https://playgta5.site/">
+      <strong>Option 1 · PlayGTA5.site</strong>
+      <small>Try the primary game source.</small>
+      <span class="play">LOAD THIS GAME</span>
+    </button>
+
+    <button class="source" data-name="PlayGTA5.com (Archive)" data-url="https://web.archive.org/web/20261006055917/https://playgta5.com/">
+      <strong>Option 2 · PlayGTA5.com</strong>
+      <small>Archived version of the alternate source. It may not work.</small>
+      <span class="play">LOAD THIS GAME</span>
+    </button>
+
+    <button class="source" data-name="Alternative Source" data-url="https://melo.ngo/">
+      <strong>Option 3 · Alternative</strong>
+      <small>Try this source if the others do not load.</small>
+      <span class="play">LOAD THIS GAME</span>
+    </button>
+  </div>
+
+  <p id="status" aria-live="polite">Choose an option to load the game player.</p>
+
+  <section class="player" id="player">
+    <div class="playerbar">
+      <div id="playing">Selected game source</div>
+      <button class="action" id="reload" type="button">↻ Reload</button>
+      <button class="action green" id="fullscreen" type="button">⛶ Fullscreen</button>
+    </div>
+    <div class="framebox">
+      <iframe id="gameFrame" title="Selected GTA V source"
+        allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write; accelerometer; gyroscope; pointer-lock"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+        src="about:blank"></iframe>
+    </div>
+  </section>
+
+  <p class="notice">Third-party sources are not controlled by this website. Some sources may redirect, block embedding, or require their own controls. Fullscreen only expands the content that the selected source permits.</p>
+</main>
+
+<script>
+(() => {
+  const player = document.getElementById('player');
+  const frame = document.getElementById('gameFrame');
+  const playing = document.getElementById('playing');
+  const status = document.getElementById('status');
+  let selectedUrl = '';
+
+  document.querySelectorAll('.source').forEach(button => {
+    button.addEventListener('click', () => {
+      selectedUrl = button.dataset.url;
+      document.querySelectorAll('.source').forEach(item => item.classList.remove('active'));
+      button.classList.add('active');
+
+      playing.textContent = button.dataset.name;
+      status.textContent = 'Loading ' + button.dataset.name + '…';
+      player.classList.add('ready');
+      frame.src = selectedUrl;
+      player.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+
+  document.getElementById('reload').addEventListener('click', () => {
+    if (selectedUrl) frame.src = selectedUrl;
+  });
+
+  document.getElementById('fullscreen').addEventListener('click', async () => {
+    try {
+      if (document.fullscreenElement) {
+        await document.exitFullscreen();
+      } else if (player.requestFullscreen) {
+        await player.requestFullscreen();
+      } else if (player.webkitRequestFullscreen) {
+        player.webkitRequestFullscreen();
+      }
+    } catch (error) {
+      status.textContent = 'Fullscreen unavailable in this browser.';
+    }
+  });
+
+  frame.addEventListener('load', () => {
+    if (selectedUrl) status.textContent = 'Source loaded. If the game is blank or redirects, try another option.';
+  });
+})();
+</script>
+</body>
+</html>

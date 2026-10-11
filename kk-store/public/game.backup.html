@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090b12">
+<title>Play GTA V | KARTIK KAMBOJ Gaming</title>
+<link rel="stylesheet" href="/style.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090b12;color:#f5f6fb;font-family:Inter,Arial,sans-serif}
+.player-head{height:65px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #252938;gap:12px}
+.back{color:#c5ff48;font-size:12px;text-decoration:none}
+.intro{padding:22px 5% 15px}
+.intro h1{font-size:clamp(25px,5vw,38px);margin:7px 0}
+.intro p{font-size:12px;color:#a1a7b9;line-height:1.7}
+.label{font-size:10px;letter-spacing:2px;color:#c5ff48;font-weight:bold}
+.player{width:90%;max-width:1250px;margin:auto;border:1px solid #303548;border-radius:12px;overflow:hidden;background:#000}
+.toolbar{min-height:48px;background:#151824;display:flex;align-items:center;justify-content:space-between;padding:8px 12px;gap:10px;flex-wrap:wrap}
+.toolbar-title{font-size:11px;font-weight:bold}
+#currentName{color:#c5ff48}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.tools button{border:1px solid #41475b;background:#222638;color:white;padding:9px 11px;border-radius:7px;font-size:11px;cursor:pointer}
+.tools button:hover,.tools button:focus{border-color:#c5ff48}
+#fullscreenBtn{background:#c5ff48;color:#10130a;border-color:#c5ff48;font-weight:bold}
+.frame-wrap{height:min(70vh,720px);min-height:350px;background:#000}
+#gameFrame{display:block;width:100%;height:100%;border:0;background:#000}
+.sources{width:90%;max-width:1250px;margin:20px auto}
+.sources h2{font-size:19px;margin:0 0 7px}
+.sources>p{font-size:11px;color:#a1a7b9;line-height:1.7}
+.source-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:15px}
+.source{background:#121520;border:1px solid #2b3041;border-radius:10px;padding:15px;text-align:left;color:white;cursor:pointer;min-width:0}
+.source.active{border-color:#c5ff48;box-shadow:inset 0 0 0 1px #c5ff4830}
+.source b,.source small{display:block}
+.source b{font-size:12px;overflow-wrap:anywhere}
+.source small{font-size:10px;color:#a1a7b9;margin-top:8px;line-height:1.5}
+.source .status{display:inline-block;color:#c5ff48;font-size:9px;letter-spacing:1px;margin-bottom:10px}
+#status{font-size:11px;line-height:1.7;color:#c7cbd7;background:#121520;border:1px solid #292e40;border-radius:8px;padding:13px;margin-top:14px}
+.note{width:90%;max-width:1250px;margin:15px auto 35px;color:#959bad;font-size:11px;line-height:1.8}
+.note a{color:#c5ff48}
+footer{padding:25px 5%;border-top:1px solid #252938;color:#999fb1;font-size:11px}
+@media(max-width:650px){
+ .player-head{height:58px}.player{width:96%}.sources,.note{width:94%}
+ .frame-wrap{height:65vh;min-height:320px}
+ .source-grid{grid-template-columns:1fr}
+ .source{padding:13px}
+ .toolbar{align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<header class="player-head">
+  <a class="brand" href="/"><span class="brand-icon">K<span>K</span></span><span>KARTIK <b>KAMBOJ</b><small>GAMING UNIVERSE</small></span></a>
+  <a class="back" href="/">← All Games</a>
+</header>
+
+<section class="intro">
+  <div class="label">FEATURED GAME / BROWSER PLAYER</div>
+  <h1>Grand Theft Auto V</h1>
+  <p>Choose a source below if the current player does not load. The source changes inside this player.</p>
+</section>
+
+<section class="player" id="playerBox">
+  <div class="toolbar">
+    <div class="toolbar-title">NOW PLAYING: <span id="currentName">PlayGTA5.site</span></div>
+    <div class="tools">
+      <button type="button" id="reloadBtn">↻ Reload</button>
+      <button type="button" id="fullscreenBtn">⛶ Fullscreen</button>
+    </div>
+  </div>
+  <div class="frame-wrap" id="frameWrap">
+    <iframe
+      id="gameFrame"
+      title="GTA V browser player"
+      src="https://playgta5.site/"
+      allow="autoplay; fullscreen; gamepad; pointer-lock"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Alternative Game Sources</h2>
+  <p>If one source stays blank or gets stuck loading, tap another option. It will replace the current source in the player above.</p>
+
+  <div class="source-grid">
+    <button class="source active" type="button"
+      data-name="PlayGTA5.site" data-url="https://playgta5.site/">
+      <span class="status">SOURCE 01 · SELECTED</span>
+      <b>PlayGTA5.site</b>
+      <small>Try the direct web page</small>
+    </button>
+
+    <button class="source" type="button"
+      data-name="Wayback Machine Archive"
+      data-url="https://web.archive.org/web/20261006055917/https://playgta5.com/">
+      <span class="status">SOURCE 02</span>
+      <b>Wayback Machine</b>
+      <small>Archived snapshot · may not contain all game files</small>
+    </button>
+
+    <button class="source" type="button"
+      data-name="Melo Mirror" data-url="https://melo.ngo/">
+      <span class="status">SOURCE 03</span>
+      <b>Melo Mirror</b>
+      <small>Try the alternative host</small>
+    </button>
+  </div>
+
+  <div id="status" role="status" aria-live="polite">
+    Loading the selected source. If it does not appear, try another source below.
+  </div>
+</section>
+
+<div class="note">
+  <strong style="color:#f5f6fb">Important:</strong>
+  These are third-party sources, not official Rockstar Games services. Their availability and iframe support may change. A source may show a blank screen or fail to load. The PlayGTA5.site domain has also been flagged as risky by a security-reporting site; avoid entering passwords, payment details, or downloading unknown files.
+  <br><br>
+  <a href="/">← Return to KARTIK KAMBOJ Gaming</a>
+</div>
+
+<footer>KARTIK KAMBOJ GAMING · Independent browser gaming portal</footer>
+
+<script>
+(() => {
+  const frame = document.getElementById("gameFrame");
+  const playerBox = document.getElementById("playerBox");
+  const currentName = document.getElementById("currentName");
+  const status = document.getElementById("status");
+  const buttons = [...document.querySelectorAll(".source")];
+
+  function chooseSource(button) {
+    const url = button.dataset.url;
+    const name = button.dataset.name;
+
+    buttons.forEach(item => {
+      item.classList.toggle("active", item === button);
+      item.querySelector(".status").textContent =
+        item === button ? "SELECTED SOURCE" :
+        "TAP TO SWITCH";
+    });
+
+    currentName.textContent = name;
+    status.textContent = "Trying " + name +
+      " inside the player. If it stays blank or fails, choose another source.";
+    frame.src = url;
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => chooseSource(button));
+  });
+
+  document.getElementById("reloadBtn").addEventListener("click", () => {
+    status.textContent = "Reloading " + currentName.textContent + "...";
+    frame.src = frame.src;
+  });
+
+  document.getElementById("fullscreenBtn").addEventListener("click", async () => {
+    try {
+      if (document.fullscreenElement) {
+        await document.exitFullscreen();
+      } else if (playerBox.requestFullscreen) {
+        await playerBox.requestFullscreen();
+      } else {
+        status.textContent = "Fullscreen is not supported by this browser. Try Chrome and rotate your phone to landscape.";
+      }
+    } catch (error) {
+      status.textContent = "Fullscreen was blocked by the browser. Try rotating your phone to landscape.";
+    }
+  });
+
+  document.addEventListener("fullscreenchange", () => {
+    document.getElementById("fullscreenBtn").textContent =
+      document.fullscreenElement ? "⤢ Exit Fullscreen" : "⛶ Fullscreen";
+  });
+})();
+</script>
+</body>
+</html>

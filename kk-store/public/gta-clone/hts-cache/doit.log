@@ -1,0 +1,8 @@
+https://www.inxanitylabs.com/games/gta-v -O /data/data/com.termux/files/home/gamehub-pro/kk-store/public/gta-clone +*.inxanitylabs.com/* -r2
+File generated automatically on Sun, 11 Oct 2026 10:40:31, do NOT edit
+
+To update a mirror, just launch httrack without any parameters
+The existing cache will be used (and modified)
+To have other options, retype all parameters and launch HTTrack
+To continue an interrupted mirror, just launch httrack without any parameters
+

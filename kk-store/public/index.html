@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#090b12">
+<meta name="description" content="Discover browser games at KARTIK KAMBOJ Gaming.">
+<title>KARTIK KAMBOJ — Play Beyond</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/">
+    <span class="brand-icon">K<span>K</span></span>
+    <span>KARTIK <b>KAMBOJ</b><small>GAMING UNIVERSE</small></span>
+  </a>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+  <nav id="nav">
+    <a class="active" href="#home">Home</a>
+    <a href="#games">Games</a>
+    <a href="#categories">Categories</a>
+  </nav>
+  <a class="top-play" href="#games">Explore Games ↗</a>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-copy">
+    <div class="eyebrow"><i></i> YOUR NEXT ADVENTURE STARTS HERE</div>
+    <h1>PLAY MORE.<br><span>LIVE THE GAME.</span></h1>
+    <p>Your gaming universe. Discover games, jump into the action, and play right from your browser.</p>
+    <div class="hero-actions">
+      <a class="primary-btn" href="#games">▶ &nbsp; Explore Games</a>
+      <a class="secondary-btn" href="#categories">Browse Categories</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>01</strong><span>FEATURED GAME</span></div>
+      <div><strong>0</strong><span>INSTALLS NEEDED*</span></div>
+      <div><strong>24/7</strong><span>YOUR GAME ZONE</span></div>
+    </div>
+    <small class="fineprint">*Browser play depends on the game and your device.</small>
+  </div>
+  <div class="hero-art">
+    <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+    <div class="hero-controller">🎮</div>
+    <div class="float-tag tag-one">⚡ INSTANT ACCESS</div>
+    <div class="float-tag tag-two">◈ GAMING ZONE</div>
+    <div class="art-bottom"><span>KK / PLAY SYSTEM</span><span>EST. 2026</span></div>
+  </div>
+</section>
+
+<section class="quick-strip">
+  <div><span class="strip-icon">⚡</span><span><b>Quick Access</b><small>Jump into a game</small></span></div>
+  <div><span class="strip-icon">◈</span><span><b>Easy Navigation</b><small>Find games faster</small></span></div>
+  <div><span class="strip-icon">▣</span><span><b>Mobile Friendly</b><small>Made for your screen</small></span></div>
+</section>
+
+<section class="games-section" id="games">
+  <div class="section-heading">
+    <div><div class="eyebrow">THE GAME LIBRARY</div><h2>Choose Your <span>Next Game</span></h2>
+    <p>Find a game and start playing.</p></div>
+    <span class="library-count">01 FEATURED</span>
+  </div>
+
+  <div class="search-row">
+    <label class="search-box"><span>⌕</span><input id="gameSearch" type="search" placeholder="Search games..." autocomplete="off"><kbd>SEARCH</kbd></label>
+    <a class="filter-shortcut" href="#categories">☷ Categories</a>
+  </div>
+
+  <div class="category-row" id="categories">
+    <button class="category active" data-category="all">All Games</button>
+    <button class="category" data-category="action">Action</button>
+    <button class="category" data-category="adventure">Adventure</button>
+    <button class="category" data-category="arcade">Arcade</button>
+  </div>
+
+  <div class="game-grid gta-only-grid" id="gameGrid">
+    <article class="game-card gta-feature-card"
+      data-title="gta v grand theft auto michael franklin trevor"
+      data-category="action adventure">
+      <a class="game-art gta-cover-art" href="/game.html" aria-label="Play GTA V">
+        <img src="/images/gta-v-cover.png"
+          alt="Grand Theft Auto V cover featuring the main characters"
+          loading="eager">
+        <span class="gta-cover-shade"></span>
+        <span class="gta-cover-label">FEATURED GAME</span>
+        <span class="gta-cover-play">▶ PLAY NOW</span>
+      </a>
+      <div class="game-info">
+        <div>
+          <div class="game-type">ACTION · OPEN WORLD</div>
+          <h3>Grand Theft Auto V</h3>
+          <p>Enter the world of Los Santos.</p>
+        </div>
+        <a class="card-play gta-play-button" href="/game.html">PLAY</a>
+      </div>
+      <div class="card-footer">
+        <span><i class="online-dot"></i> BROWSER PLAYER</span>
+        <span>GTA V</span>
+      </div>
+    </article>
+  </div>
+  <p id="noResults" class="no-results" hidden>No games found. Try another search.</p>
+</section>
+
+<section class="join-banner">
+  <div><div class="eyebrow">WELCOME TO YOUR GAME ZONE</div><h2>One place. <span>More adventures.</span></h2><p>Explore the library and check back for new games.</p></div>
+  <a class="primary-btn" href="#games">Explore Library ↗</a>
+</section>
+</main>
+
+<footer><a class="footer-brand" href="/">KARTIK KAMBOJ <span>GAMING</span></a><p>An independent browser gaming portal. Games may be hosted by third-party providers.</p><a href="#home">Back to top ↑</a><small>© 2026 KARTIK KAMBOJ</small></footer>
+<script src="/app.js"></script>
+</body>
+</html>
