@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "buildCommand": "echo Static site deployment",
+  "outputDirectory": "public",
+  "installCommand": "echo No dependencies required"
+}
